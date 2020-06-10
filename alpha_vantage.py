@@ -21,7 +21,6 @@ while j==1:
         close_data = data['4. close']
         percent_change = close_data.pct_change()
         percent_change.to_csv("pctchange.text")
-
         lastval_change = percent_change[-1]
 
     i = i+1
