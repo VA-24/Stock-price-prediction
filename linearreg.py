@@ -2,9 +2,12 @@ import numpy as np
 import pandas as pd
 from sklearn import linear_model
 import sklearn
+import matplotlib.pyplot as pyplot
+from matplotlib import style
 
 
 stock_csv = ['WMT.csv', 'TSLA.csv', 'BA.csv', 'AAPL.csv']
+
 
 for i in range (len(stock_csv)):
     data = pd.read_csv(stock_csv[i])
@@ -34,3 +37,9 @@ for i in range (len(stock_csv)):
         print(predictions[x], x_test[x], y_test[x])
 
 
+    p = '1. open'
+    style.use("ggplot")
+    pyplot.scatter(data[p], data["4. close"])
+    pyplot.xlabel(p)
+    pyplot.ylabel("4. close")
+    pyplot.show()
